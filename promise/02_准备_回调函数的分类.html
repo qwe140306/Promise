@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>02_准备_回调函数的分类</title>
 </head>
+
 <body>
   <script>
     /* 
@@ -16,6 +18,32 @@
       理解: 不会立即执行, 会放入回调队列中将来执行
       例子: 定时器回调 / ajax回调 / Promise的成功|失败的回调
     */
+
+    // 1.同步回调函数
+    const arr = [1, 3, 5, 7, 9]
+
+    /* arr.forEach(item => {
+      console.log(item);    // 遍历的回调函数  同步回调函数，不会放入队列中，一上来就要执行
+    })
+
+    console.log("123"); */
+
+    // 2.异步回调函数
+    
+    setTimeout(() => {    // 异步回调函数 会放入队列中来执行-
+      arr.forEach(item => {
+        console.log(item);
+      })
+    }, 0);
+
+    console.log("setTimeout()之前执行了");
+
+
+
+
+
+
   </script>
 </body>
+
 </html>
